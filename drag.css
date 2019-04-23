@@ -5,31 +5,43 @@ body {
 	background-color: rgb(234, 235, 243);
 }
 
+/*
+	Size of container = 60%;
+	Absolute position, center
+	Grid display, 1 row, 2 column
+	Font: roboto
+*/
 .container {
 	min-width: 60%;
 	min-height: 60%;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	background-color: rgb(255, 255, 255);
 	transform: translate(-50%, -50%);
+	background-color: rgb(255, 255, 255);
 	border: 1px solid rgb(206, 206, 206);
 	padding: 0 50px;
 	display: grid;
 	grid-template: 1fr / 1fr 1fr;
-
 	font-size: 1.1em;
 	font-family: roboto;
 }
 
-.container_bin {
-	/* margin: 0 auto; */
+/*
+	Full height and 90% width
+*/
+.container_column {
 	width: 90%;
 	height: 100%;
 	background-color: rgb(255, 255, 255);
 	padding: 0 10px;
 }
 
+/*
+	Title in the center
+	font little bigger then another content
+	Beautiful color of text and border
+*/
 .title {
 	text-align: center;
 	font-size: 1.3em;
@@ -39,10 +51,15 @@ body {
 	border-bottom: 3px solid rgb(94, 201, 174);
 }
 
-.content {
+.list {
 	max-width: 100%;
 }
 
+/*
+	white back and gray bottom border
+	cursor pointer
+	User can't select
+*/
 .device {
 	max-width: 100%;
 	background-color: rgb(255, 255, 255);
@@ -54,7 +71,12 @@ body {
 	position: static;
 }
 
+/*
+	Fixed position for dragging
+	Remove border and background
+*/
 .drag {
 	position: fixed;
 	border: none;
+	background-color: transparent;
 }

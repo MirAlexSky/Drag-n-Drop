@@ -3,7 +3,8 @@
 let dragNow = false;
 
 let container,
-	dragElem;
+	dragElem,
+	dragList;
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		dragElem = e.target;
 		dragElem.classList.add('drag');
 
+		dragList = dragElem.closest('.list');
 		document.body.append(dragElem);
 
 		dragElem.style.left = e.clientX + 'px';
@@ -27,12 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (!dragNow) return;
 
 		var elemOver = document.elementFromPoint(e.clientX, e.clientY);
-		elemOver = elemOver.closest('.container_bin');
+		elemOver = elemOver.closest('.container_column');
 
 		if (elemOver) {
-			elemOver.querySelector('.content').append(dragElem);
+			elemOver.querySelector('.list').append(dragElem);
 		} else {
-			dragElem.closest('.content').append(dragElem);
+			dragList.append(dragElem);
 		}
 
 		dragElem.classList.remove('drag');
