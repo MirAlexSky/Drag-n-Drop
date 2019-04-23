@@ -1,0 +1,60 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(234, 235, 243);
+}
+
+.container {
+	min-width: 60%;
+	min-height: 60%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-color: rgb(255, 255, 255);
+	transform: translate(-50%, -50%);
+	border: 1px solid rgb(206, 206, 206);
+	padding: 0 50px;
+	display: grid;
+	grid-template: 1fr / 1fr 1fr;
+
+	font-size: 1.1em;
+	font-family: roboto;
+}
+
+.container_bin {
+	/* margin: 0 auto; */
+	width: 90%;
+	height: 100%;
+	background-color: rgb(255, 255, 255);
+	padding: 0 10px;
+}
+
+.title {
+	text-align: center;
+	font-size: 1.3em;
+	padding: 10px 0;
+	background-color: rgb(255, 255, 255);
+	color: rgb(94, 201, 174);
+	border-bottom: 3px solid rgb(94, 201, 174);
+}
+
+.content {
+	max-width: 100%;
+}
+
+.device {
+	max-width: 100%;
+	background-color: rgb(255, 255, 255);
+	border-bottom: 1px solid rgb(211, 211, 211);
+	padding: 10px 0;
+	margin: 0 20px;
+	cursor: pointer;
+	user-select: none;
+	position: static;
+}
+
+.drag {
+	position: fixed;
+	border: none;
+}
