@@ -4,7 +4,9 @@ let dragNow = false;
 
 let container,
 	dragElem,
-	dragList;
+	dragList,
+	dragShiftX,
+	dragShiftY;
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -15,13 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		dragNow = true;
 		dragElem = e.target;
-		dragElem.classList.add('drag');
 
+		dragShiftX = e.clientX - dragElem.getBoundingClientRect().left;
+		dragShiftY = e.clientY - dragElem.getBoundingClientRect().top;
+
+		dragElem.classList.add('drag');
 		dragList = dragElem.closest('.list');
 		document.body.append(dragElem);
 
-		dragElem.style.left = e.clientX + 'px';
-		dragElem.style.top = e.clientY + 'px';
+		dragElem.style.left = e.clientX - dragShiftX + 'px';
+		dragElem.style.top = e.clientY - dragShiftY + 'px';
 	
 	});
 
@@ -48,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	document.onmousemove = function(e) {
 		if (!dragNow) return;
-		dragElem.style.left = e.clientX + 'px';
-		dragElem.style.top = e.clientY + 'px';
+		dragElem.style.left = e.clientX - dragShiftX + 'px';
+		dragElem.style.top = e.clientY - dragShiftY + 'px';
 	};
 });
 
